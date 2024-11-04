@@ -4,7 +4,7 @@ from .models import Imovel
 from .forms import ImovelForm
 
 def index(request):
-    return render(request, 'sales/index.html')
+    return render(request, 'index.html')
 
 def home(request):
     imoveis = Imovel.objects.all()
@@ -15,7 +15,7 @@ def cadastrar_imovel(request):
         form = ImovelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('index')
     else:
         form = ImovelForm()
-    return render(request, 'cadastro.html', {'form': form})
+    return render(request, 'sales/cadastro.html', {'form': form})

@@ -1,4 +1,6 @@
+
 from django.db import models
+
 
 class Imovel(models.Model):
     titulo = models.CharField(max_length=200)
