@@ -1,0 +1,9 @@
+{% load static %}
+<section class="container my-5">
+    <h2 class="text-center mb-4">Cadastre Seu Imóvel</h2>
+    <form action="{% url 'cadastrar_imovel' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Cadastrar Imóvel</button>
+    </form>
+</section>

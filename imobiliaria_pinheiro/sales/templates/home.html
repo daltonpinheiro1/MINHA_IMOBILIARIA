@@ -1,0 +1,19 @@
+{% load static %}
+<div class="container my-5">
+    <h2 class="text-center mb-4">Imóveis Disponíveis</h2>
+    <div class="row">
+        {% for imovel in imoveis %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="{{ imovel.imagem.url }}" class="card-img-top" alt="Imagem do Imóvel">
+                <div class="card-body">
+                    <h5 class="card-title">{{ imovel.titulo }}</h5>
+                    <p class="card-text">{{ imovel.descricao }}</p>
+                    <p class="card-text">Preço: R$ {{ imovel.preco }}</p>
+                    <a href="#" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
