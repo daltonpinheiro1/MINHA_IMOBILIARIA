@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária Pinheiro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Imobiliária Pinheiro</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#imoveis">Imóveis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#cadastro">Cadastrar Imóvel</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contato">Contato</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Banner -->
+<div class="jumbotron text-center">
+    <h1 class="display-4">Bem-vindo à Imobiliária Pinheiro</h1>
+    <p class="lead">Encontre seu próximo lar conosco!</p>
+</div>
+
+<!-- Lista de Imóveis -->
+<section id="imoveis" class="container my-5">
+    <h2 class="text-center mb-4">Imóveis Disponíveis</h2>
+    <div class="row">
+        <!-- Exemplo de Cards para Imóveis -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Imagem do Imóvel">
+                <div class="card-body">
+                    <h5 class="card-title">Imóvel 1</h5>
+                    <p class="card-text">Descrição breve do imóvel, localização e características.</p>
+                    <a href="#" class="btn btn-primary">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        <!-- Repita outros cards para mais imóveis -->
+    </div>
+</section>
+
+<!-- Formulário de Cadastro de Imóvel -->
+<section id="cadastro" class="container my-5">
+    <h2 class="text-center mb-4">Cadastre Seu Imóvel</h2>
+    <form action="{% url 'cadastrar_imovel' %}" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="titulo">Título do Imóvel</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="preco">Preço</label>
+                <input type="number" class="form-control" id="preco" name="preco" placeholder="Preço em R$">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" id="descricao" name="descricao" rows="3" placeholder="Descreva o imóvel"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="imagem">Imagem do Imóvel</label>
+            <input type="file" class="form-control-file" id="imagem" name="imagem">
+        </div>
+        <button type="submit" class="btn btn-success">Cadastrar Imóvel</button>
+    </form>
+</section>
+
+<!-- Contato -->
+<section id="contato" class="container my-5">
+    <h2 class="text-center mb-4">Contato</h2>
+    <p class="text-center">Entre em contato conosco pelo telefone (38) 99999-9999 ou pelo email imobiliaria@pinheiro.com.br</p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Imobiliária Pinheiro - Todos os direitos reservados</p>
+</footer>
+
+<!-- JavaScript do Bootstrap e jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
